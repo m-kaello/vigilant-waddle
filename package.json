@@ -1,0 +1,30 @@
+{
+  "name": "dorot-homepage",
+  "version": "1.0.0",
+  "private": true,
+  "description": "dorot-homepage",
+  "author": "Michael Ferrer",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "ajv": "^8.20.0",
+    "ajv-keywords": "^5.1.0",
+    "gatsby": "^5.16.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "swiper": "^12.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.19"
+  }
+}
