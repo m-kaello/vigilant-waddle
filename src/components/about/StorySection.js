@@ -2,7 +2,6 @@ import React from "react";
 import timelineGraphic from "../../images/timeline.png";
 
 const StorySection = () => {
-  // Extracted narrative directly from Screenshot 2026-06-24 at 12.16.51 am.jpg
   const historicalMilestones = [
     {
       marker: "The Idea",
@@ -23,29 +22,29 @@ const StorySection = () => {
   ];
 
   return (
-    <section className="w-full bg-[#be82b2] text-[#4d003b] py-16 px-6 sm:px-12 md:py-24 md:px-16 lg:px-24">
+    <section className="w-full bg-[#bd7ab3] text-[#720062] py-10 px-6 sm:px-12 md:py-16 md:px-16 lg:px-24">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         
         {/* Section Header */}
-        <div className="text-center mb-12 lg:mb-16">
-          <span className="block font-sans font-bold text-lg md:text-xl tracking-normal lowcase mb-1 opacity-90">
+        <div className="text-center mb-6 lg:mb-8">
+          <span className="block font-semibold text-lg md:text-[24px] tracking-normal lowercase mb-1 opacity-90">
             from our company's past to our future
           </span>
-          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-[44px] leading-tight tracking-tight">
+          <h2 className="font-['gelica'] font-bold text-3xl sm:text-4xl lg:text-[38px] leading-tight tracking-tight">
             The Dorot gardens Story So Far...
           </h2>
         </div>
 
-        {/* Desktop View: The Full Visual Asset Timeline Graphic */}
+        {/* Desktop View */}
         <div className="hidden md:block w-full relative select-none">
           <img
             src={timelineGraphic}
             alt="Historical progression graphic showing The Idea, End of 1980s, 1992, and The Future milestones"
-            className="w-full h-auto object-contain"
+            className="w-[85%] lg:w-[80%] h-auto object-contain mx-auto"
           />
         </div>
 
-        {/* Mobile View: High-Readability Accessible Layout */}
+        {/* Mobile View */}
         <div className="flex md:hidden flex-col gap-8 w-full max-w-md">
           {historicalMilestones.map((milestone, idx) => (
             <div 

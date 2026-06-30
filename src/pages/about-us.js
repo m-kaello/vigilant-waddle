@@ -15,7 +15,7 @@ export default function AboutPage() {
         <>
             <Header />
 
-            <main className="pt-[100px]">
+            <main>
                 <AboutHero />
                 <AboutIntro />
                 <Certifications />

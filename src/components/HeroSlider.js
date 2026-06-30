@@ -21,7 +21,7 @@ export default function HeroSlider() {
   const swiperRef = useRef(null);
 
   return (
-    <section className="relative block h-[790px] w-full clear-both overflow-hidden bg-[#79005f] p-0 m-0">
+    <section className="relative block h-[690px] w-full clear-both overflow-hidden bg-[#79005f] p-0 m-0">
       <style>{`
         .hero-swiper .swiper-pagination-bullet {
           width: 20px;
@@ -45,7 +45,7 @@ export default function HeroSlider() {
       `}</style>
 
       <button
-        className="hero-prev absolute left-[10px] top-1/2 z-50 -translate-y-1/2 border-0 bg-transparent p-0"
+        className="hero-prev absolute left-[10px] top-[42%] z-50 -translate-y-1/2 border-0 bg-transparent p-0"
         onClick={() => swiperRef.current?.autoplay.stop()}
       >
         <img src={leftArrow} alt="Previous" className="block w-[50px] rounded-[10px]" />
@@ -104,7 +104,7 @@ export default function HeroSlider() {
                   backgroundImage: `url(${heroBg})`,
                 }}
               >
-                <div className="px-[80px] pt-[198px] text-white">
+                <div className="relative -top-[100px] px-[80px] pt-[198px] text-white">
                   <p className="m-0 text-[24px] font-extrabold leading-tight">
                     cooking prep made simple
                   </p>

@@ -1,13 +1,9 @@
 import React from "react";
-import { Link } from "gatsby"; // Or 'react-router-dom' depending on your framework
 
-// Import your imagery assets
-import introFieldImg from "../../images/abouthero-bg.png"; 
-// Update this with your second section's image (e.g., factory, kitchen, or close-up packaging)
-import introSecondImg from "../../images/abouthero-bg.png"; 
+import introFieldImg from "../../images/about-1.jpg";
+import introSecondImg from "../../images/about-2.png";
 
 const AboutIntro = () => {
-  // Content array containing structural data for both blocks
   const sections = [
     {
       id: 1,
@@ -18,78 +14,71 @@ const AboutIntro = () => {
       paragraphs: [
         "Dorot Gardens was initially established in 1992, and is owned by Kibbutz Dorot in the southern part of Israel.",
         "The kibbutz has more than 3,500 acres of field crops which are picked, and then immediately chopped, packaged and frozen in a unique fast freeze process. This ensures that they maintain their taste, freshness and nutritive value.",
-        "Behind that process and the great-tasting products it creates, the company has grown and expanded well over the years – to the point where today it is the largest supplier of fresh frozen seasoning products in Israel."
-      ],
-      hasLink: true
+        "Behind that process and the great-tasting products it creates, the company has grown and expanded well over the years – to the point where today it is the largest supplier of fresh frozen seasoning products in Israel.",
+        "To learn more about Dorot Gardens’ entire product lineup, click this link!"
+      ]
     },
     {
       id: 2,
-      tagline: "from farm to freezer",
-      title: "Our commitment to quality and convenience.",
-      image: introSecondImg, // This will be on the right side on desktop
-      altText: "Close-up of Dorot Gardens signature seasoning cubes",
+      tagline: "keeping fresh using advanced machinery",
+      title: "Modern and Automated Production Facility",
+      image: introSecondImg,
+      altText: "Modern automated production facility with Dorot Gardens processing and packaging machinery",
       paragraphs: [
-        "We control the entire process from seeds to packaging. This allows us to ensure the absolute highest standards of quality safety and consistency across all our product ranges.",
-        "By eliminating the peeling, chopping, and short shelf-life of fresh herbs, we bring ultimate convenience to home cooks and professional chefs globally without ever compromising on flavor.",
-        "Whether it's crushed garlic, chopped parsley, or glazed onions, our signature frozen pre-portioned trays are ready to elevate any recipe instantly."
-      ],
-      hasLink: false
+        "Our production facility is fully automated and equipped with top-of-the-line machinery. The plant operates three different production lines: the unique individual product packaging trays, product jars for private home use, and the larger pails for the food service and industrial markets. All told we can produce about 4,000 trays per hour, and the overall annual turnout reaches several million trays and jars.",
+        "At the same time, our R&D department invests considerable time and resources into developing new products, keeping the company in a constant state of growth and moving towards achieving new objectives as they are set."
+      ]
     }
   ];
 
   return (
     <div className="w-full flex flex-col">
       {sections.map((section, index) => {
-        // Automatically alternates layout alignment on desktop viewports
         const isReversed = index % 2 !== 0;
 
         return (
-          <section 
-            key={section.id} 
+          <section
+            key={section.id}
             className={`w-full min-h-[85vh] flex flex-col items-stretch overflow-hidden ${
               isReversed ? "md:flex-row-reverse" : "md:flex-row"
             }`}
           >
-            {/* Column 1: Image Asset */}
-            <div className="w-full md:w-1/2 relative min-h-[350px] md:min-h-auto">
+            {/* Image Column */}
+            <div className="relative w-full min-h-[350px] md:w-1/2 md:min-h-auto">
               <img
                 src={section.image}
                 alt={section.altText}
-                className="absolute inset-0 w-full h-full object-cover object-center"
+                className="absolute inset-0 h-full w-full object-cover object-center"
               />
             </div>
 
-            {/* Column 2: Text Copy Narrative */}
-            <div className="w-full md:w-1/2 bg-[#c64497] flex flex-col justify-center px-8 py-16 sm:px-12 md:px-16 lg:px-24 xl:px-32 text-white">
+            {/* Text Column */}
+            <div className="w-full md:w-1/2 bg-[#cc4aa7] flex flex-col justify-center px-8 py-16 sm:px-10 md:px-12 lg:px-10 xl:px-16 lg:pr-12 xl:pl-16 xl:pr-16 text-white">
               <div className="max-w-xl mx-auto md:mx-0">
-                {/* Subheading */}
-                <span className="block font-sans font-medium text-lg md:text-xl lowcase tracking-normal mb-1 opacity-95">
+                {/* Tagline */}
+                <span
+                  className="block mb-1 text-lg md:text-2xl font-bold lowercase tracking-normal opacity-95"
+                  style={{ fontFamily: '"gelica", serif' }}
+                >
                   {section.tagline}
                 </span>
 
-                {/* Main Section Headline */}
-                <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-[40px] leading-tight mb-8 tracking-tight">
+                {/* Title */}
+                <h2
+                  className="mb-8 text-3xl sm:text-4xl lg:text-[38px] font-bold leading-tight tracking-tight"
+                  style={{ fontFamily: '"gelica", serif' }}
+                >
                   {section.title}
                 </h2>
 
-                {/* Iterative Paragraph Elements */}
-                <div className="space-y-6 font-sans text-[15px] sm:text-base leading-relaxed opacity-90 font-normal">
+                {/* Paragraphs */}
+                <div
+                  className="space-y-6 text-[17px] sm:text-[20px] leading-tight font-semibold opacity-90"
+                  style={{ fontFamily: '"Goldplay", sans-serif' }}
+                >
                   {section.paragraphs.map((text, pIndex) => (
                     <p key={pIndex}>{text}</p>
                   ))}
-                  
-                  {/* Dynamic CTA injection matching Screenshot 2026-06-24 at 12.07.02 am.jpg */}
-                  {section.hasLink && (
-                    <p className="pt-2 font-medium">
-                      To learn more about Dorot Gardens’ entire product lineup,{" "}
-                      <Link 
-                        to="/products" 
-                        className="underline hover:text-purple-100 transition-colors duration-200 cursor-pointer"
-                      >
-                        click this link!
-                      </Link>
-                    </p>
-                  )}
                 </div>
               </div>
             </div>

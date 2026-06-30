@@ -9,7 +9,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed left-0 top-0 z-50 w-full bg-[#720062]">
+    <header className="sticky fixed left-0 top-0 z-50 w-full bg-[#720062] shadow-[4px_6px_10px_rgba(44,14,40,4)]">
       <div className="mx-auto flex h-[82px] max-w-[1440px] items-center justify-between px-6 md:h-[100px] md:px-[70px]">
         <Link to="/">
           <img
