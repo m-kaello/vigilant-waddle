@@ -5,10 +5,10 @@ import Footer from "../components/Footer";
 
 import AboutHero from "../components/about/AboutHero";
 import AboutIntro from "../components/about/AboutIntro";
-import ProductionFacility from "../components/about/ProductionFacility";
 import Certifications from "../components/about/Certifications";
 import StorySection from "../components/about/StorySection";
 import FutureSection from "../components/about/FutureSection";
+import ViewProducts from "../components/about/ViewProducts";
 
 export default function AboutPage() {
     return (
@@ -20,6 +20,8 @@ export default function AboutPage() {
                 <AboutIntro />
                 <Certifications />
                 <StorySection />
+                <FutureSection />   
+                <ViewProducts />
             </main>
 
             <Footer />
