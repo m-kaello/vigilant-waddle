@@ -8,6 +8,7 @@ import AboutIntro from "../components/about/AboutIntro";
 import Certifications from "../components/about/Certifications";
 import StorySection from "../components/about/StorySection";
 import FutureSection from "../components/about/FutureSection";
+import ExploreSection from "../components/about/ExploreSection";
 import ViewProducts from "../components/about/ViewProducts";
 
 export default function AboutPage() {
@@ -20,8 +21,9 @@ export default function AboutPage() {
                 <AboutIntro />
                 <Certifications />
                 <StorySection />
-                <FutureSection />   
-                <ViewProducts />
+                <FutureSection />
+                <ExploreSection /> 
+                <ViewProducts /> 
             </main>
 
             <Footer />
