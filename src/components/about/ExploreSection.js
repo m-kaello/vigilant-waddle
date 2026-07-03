@@ -22,32 +22,176 @@ const ExploreSection = () => {
   ];
 
   return (
-    <section className="bg-[#be7ab3] py-12 px-4 md:px-8 text-center">
+    <section id="instagram" className="explore-section bg-[#be7ab3] py-12 px-4 md:px-8 text-center">
+      <style>{`
+        @media (max-width: 1279px) {
+          .explore-section {
+            padding: 56px 36px;
+          }
+
+          .explore-tagline {
+            max-width: 100%;
+            margin: 0 auto;
+            font-size: 24px;
+            line-height: 32px;
+            letter-spacing: 0;
+          }
+
+          .explore-title {
+            margin: 0;
+            padding-top: 10px;
+            font-size: 36px;
+            line-height: 42px;
+          }
+
+          .explore-grid {
+            width: 100%;
+            margin: 48px auto 0;
+          }
+
+          .explore-card {
+            height: auto;
+            aspect-ratio: 1 / 1;
+          }
+        }
+
+        @media (min-width: 768px) and (max-width: 1279px) and (orientation: portrait) {
+          .explore-section {
+            padding: 16px 52px 48px;
+          }
+
+          .explore-tagline {
+            font-size: 16px;
+            line-height: 20px;
+          }
+
+          .explore-title {
+            font-size: 28px;
+            line-height: 48px;
+          }
+
+          .explore-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            max-width: 660px;
+            margin-top: 24px;
+          }
+
+          .explore-card {
+            aspect-ratio: 4 / 3;
+          }
+        }
+
+        @media (min-width: 768px) and (max-width: 1279px) and (orientation: landscape) {
+          .explore-section {
+            padding: 32px 36px 72px;
+          }
+
+          .explore-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            max-width: 650px;
+            margin-top: 24px;
+          }
+
+          .explore-title {
+            font-size: 36px;
+            line-height: 42px;
+          }
+
+          .explore-card p {
+            opacity: 1;
+          }
+        }
+
+        @media (max-width: 767px) {
+          .explore-section {
+            padding: 16px 10px;
+          }
+
+          .explore-tagline {
+            font-size: 16px;
+            line-height: 20px;
+          }
+
+          .explore-title {
+            font-size: 28px;
+            line-height: 48px;
+          }
+
+          .explore-grid {
+            margin-top: 24px;
+          }
+        }
+
+        @media (max-width: 767px) and (orientation: portrait) {
+          .explore-section {
+            padding: 28px 22px 24px;
+          }
+
+          .explore-tagline {
+            font-size: 16px;
+            line-height: 20px;
+          }
+
+          .explore-title {
+            font-size: 28px;
+            line-height: 48px;
+          }
+
+          .explore-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            max-width: 600px;
+            margin-top: 32px;
+          }
+        }
+
+        @media (max-width: 991px) and (max-height: 599px) and (orientation: landscape) {
+          .explore-section {
+            padding: 20px 36px 48px;
+          }
+
+          .explore-tagline {
+            font-size: 16px;
+            line-height: 20px;
+          }
+
+          .explore-title {
+            font-size: 28px;
+            line-height: 42px;
+          }
+
+          .explore-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            max-width: 650px;
+            margin-top: 48px;
+          }
+
+          .explore-card p {
+            opacity: 1;
+          }
+        }
+      `}</style>
       {/* Top Tagline */}
 
       <p
-        className="mt-4 text-[#760062] text-[20px] font-semibold md:text-[23px] max-w-6xl mx-auto mb-2 tracking-wide"
+        className="explore-tagline mt-4 text-[#760062] text-[20px] font-semibold md:text-[23px] max-w-6xl mx-auto mb-2 tracking-wide"
       >
         Explore our recipes and discover your new favorite dishes & flavor combinations!
       </p>
 
       {/* Main Heading */}
       <h2
-        className="text-[#720062] text-3xl md:text-4xl mb-8"
+        className="explore-title text-[#720062] text-3xl md:text-4xl mb-8"
         style={{ fontFamily: "gelica, serif", fontWeight: 700 }}
       >
         Follow Us on Instagram
       </h2>
 
       {/* Instagram Image Grid */}
-      <div className="mt-16 mb-16 grid grid-cols-2 md:grid-cols-4 gap-0 max-w-[1300px] mx-auto overflow-hidden">
+      <div className="explore-grid mt-16 mb-16 grid grid-cols-2 md:grid-cols-4 gap-0 max-w-[1300px] mx-auto overflow-hidden">
         {igFeeds.map((feed) => (
-          <a
+          <div
             key={feed.id}
-            href={feed.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative group block h-[285px] bg-[#720062] overflow-hidden"
+            className="explore-card relative group block h-[285px] bg-[#720062] overflow-hidden"
           >
             <img
               src={feed.img}
@@ -59,7 +203,7 @@ const ExploreSection = () => {
                 {feed.caption}
               </p>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </section>
