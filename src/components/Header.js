@@ -135,7 +135,9 @@ export default function Header() {
         <nav className="hidden flex-1 relative -top-[6px] items-center font-goldplay text-[16px] font-semibold text-white lg:flex">
           {/* Center menu links */}
           <div className="absolute left-1/2 flex -translate-x-1/2 lg:-translate-x-[52%] xl:-translate-x-[60%] items-center gap-[34px] xl:gap-[37px]">
-            <button type="button">Products</button>
+            <Link to="/products" className="whitespace-nowrap">
+              Products
+            </Link>
             <button type="button">Recipes</button>
             <button type="button">Blog</button>
             <Link to="/about-us" className="whitespace-nowrap">
